@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react' ;
 import axios from 'axios';
 
 import Image from './components/Image'
-import PictureCard from './components/PictureCard'
+import NasaCard from './components/NasaCard'
 import PlanetList from './components/PlanetList'
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
 return (
     <div>
         <Image url={nasaData.url}/>
-        <PictureCard title={nasaData.title} copyright={nasaData.copyright} description={nasaData.explanation}/>
+        <NasaCard title={nasaData.title} copyright={nasaData.copyright} description={nasaData.explanation}/>
         <PlanetList />
     </div>
 )

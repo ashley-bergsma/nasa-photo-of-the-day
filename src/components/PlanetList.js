@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'; 
 import axios from 'axios'; 
+import style from 'styled-components';
 import PlanetCard from './PlanetCard';
+
+const StyledPlanetList = style.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
 
 function PlanetList() {
     const [planets, setPlanets] = useState([]);
@@ -17,16 +24,20 @@ function PlanetList() {
     }, []);
 
     return (
-        <div>
-           {planets.map(body => {
+        <StyledPlanetList>
+           {planets.filter(body => body.isPlanet === true).map(filteredBody => {
                return (
-                   <PlanetCard />
+                   <PlanetCard 
+                   key={filteredBody.id} 
+                   name={filteredBody.name} 
+                   englishName={filteredBody.englishName} 
+                   date={filteredBody.discoveryDate} 
+                   person={filteredBody.discoveredBy}
+                   />
                )
            })}
-        </div>
+        </StyledPlanetList>
     )
-}
+} 
 
 export default PlanetList;
-
-// i want to filter the array by bodies that are planets, and then map over the planets and create a card for them.
