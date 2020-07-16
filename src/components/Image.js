@@ -1,17 +1,13 @@
-import React from 'react'; 
+import React, { useState, useEffect }  from 'react';
+
 
 const Image = props => {
     return (
-        <div>
-            <div>
-                <img 
-                alt=""
+                <div><img 
+                src={props.url}
                 className=""
-                src="" // {props.url}
-                />
-            </div>
-            <h2 className="">{props.copyright}</h2>
-        </div>
+                alt="Nasa Daily"
+                /></div>
     );
 }
 

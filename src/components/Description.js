@@ -4,7 +4,7 @@ const Description = props => {
     return (
         <div>
             <div>
-               <p>Description of image</p> 
+               <p>{props.explanation}</p> 
             </div>
         </div>
     )
